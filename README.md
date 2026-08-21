@@ -1,0 +1,3 @@
+# Repositório criado para o acompanhamento das aulas de OO (Orientação a Objetos)
+
+Em construção...
