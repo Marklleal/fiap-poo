@@ -6,25 +6,23 @@ import br.com.fiapride.model.Passenger;
 
 public class MainSystem {
     public static void main(String[] args) {
-        // Instancia passageiro (autoexplicativo)
-        Passenger passenger1 = new Passenger();
-        passenger1.name = "Rubens";
-        passenger1.cash = 120.20;
-
-        Passenger passenger2 = new Passenger();
-        passenger2.name = "Isaque";
-        passenger2.cash = 301.50;
+        // String name, double balance, char gender, int rides, float stars
+        // Stars devem estar entre 0 e 5!
+        Passenger passenger1 = new Passenger("Rubens", 120.20, 'M', 2, 4.5f);
+        Passenger passenger2 = new Passenger("Isaque", 301.50, 'M', 12, 4.7f);
 
         System.out.println("--- FiapRide System ---");
         System.out.println(
             "Passenger name: " + passenger1.name +
-            ", cash: " + passenger1.cash
+            ", cash: " + passenger1.balance
         );
 
         System.out.println(
             "Passenger name: " + passenger2.name +
             // `String.format` foi usado para definir quantidade de casa decimais para ser exibido com println, devido a suas propiedades
-            ", cash: " + String.format("%.2f", passenger2.cash)
+            ", cash: " + String.format("%.2f", passenger2.balance)
         );
     }
+
+
 }
