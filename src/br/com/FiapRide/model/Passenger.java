@@ -41,8 +41,29 @@ public class Passenger {
         }
 
         this.balance -= cost;
+        this.rides ++;
         System.out.println("Paid tripe\nRemaining balance: " + this.balance);
     }
+
+    public void rate(float rate) {
+        if (rate < 0 || rate > 5.0) {
+            System.out.println("Error: The rating must be between 0 and 5.0.");
+            return;
+        }
+
+        this.stars = (stars + rate) / 2;
+    }
+
+    public void updateProfile(String newName, char newGender) {
+        this.name = newName;
+        char genderUpper = Character.toUpperCase(newGender);
+
+        if (genderUpper != 'M' && genderUpper != 'F') {
+            // Código para gênero inválido
+            System.out.println("In this version, there is just M or F.");
+            return;
+        }
+
+        this.gender = newGender;
+    }
 }
-
-
