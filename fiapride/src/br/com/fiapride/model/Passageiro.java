@@ -9,22 +9,14 @@ public class Passageiro {
 
     // Construtor: roteia tudo pelos setters (ponto único de validação)
     public Passageiro(String nome, String cpf) {
-        this.setNome(nome);
-        this.setCpf(cpf);
-        this.setSaldo(0);   // todo mundo começa zerado — passando pela guarda
+        setNome(nome);
+        setCpf(cpf);
+        setSaldo(0);   // todo mundo começa zerado — passando pela guarda
     }
 
     // Getters públicos: leitura liberada
     public double getSaldo() {
         return this.saldo;
-    }
-
-    public String getNome() {
-        return this.nome;
-    }
-
-    public String getCpf() {
-        return this.cpf;
     }
 
     // Setters PRIVADOS: escrita só acontece dentro da classe
@@ -36,8 +28,16 @@ public class Passageiro {
         }
     }
 
+    public String getNome() {
+        return this.nome;
+    }
+
     private void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getCpf() {
+        return this.cpf;
     }
 
     private void setCpf(String cpf) {
@@ -50,8 +50,8 @@ public class Passageiro {
             System.out.println("Erro: O valor de recarga deve ser maior que zero.");
             return;
         }
-        this.saldo += valor;   // acesso direto DENTRO da classe: legítimo
-        System.out.println("Recarga realizada. Novo saldo: " + this.saldo);
+        setSaldo(valor);
+        System.out.println("Recarga realizada. Novo saldo: " + getSaldo());
     }
 
     public void pagarViagem(double custo) {
@@ -63,7 +63,7 @@ public class Passageiro {
             System.out.println("Erro: Saldo insuficiente para realizar a viagem.");
             return;
         }
-        this.saldo -= custo;
-        System.out.println("Viagem paga. Saldo restante: " + this.saldo);
+        setSaldo(getSaldo() - custo);
+        System.out.println("Viagem paga. Saldo restante: " + getSaldo());
     }
 }
