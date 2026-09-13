@@ -1,16 +1,17 @@
 package br.com.fiaplibrary.model;
 
 public class Book {
-    public String name;
-    public int totalBooks;
-    public int totalAvailableBooks;
-    public int totalPages;
+    private String name;
+    private int totalBooks;
+    private int totalAvailableBooks;
+    private int totalPages;
 
     // Constructor declaration - It's not the same that method
     public Book(String name, int totalBooks, int totalPages) {
-        this.name = name;
-        this.totalBooks = this.totalAvailableBooks = totalBooks;
-        this.totalPages = totalPages;
+        setName(name);
+        setTotalBooks(totalBooks);
+        setTotalAvailableBooks(totalBooks);
+        setTotalPages(totalPages);
     }
 
     public void bookRental(int numBooks) {
@@ -26,7 +27,7 @@ public class Book {
         return this.name;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
@@ -34,8 +35,8 @@ public class Book {
         return this.totalBooks;
     }
 
-    public void setTotalBooks(int total) {
-        this.totalBooks = total;
+    public void setTotalBooks(int totalBooks) {
+        this.totalBooks = totalBooks;
     }
 
     public int getTotalAvailableBooks() {
@@ -43,6 +44,22 @@ public class Book {
     }
 
     public void setTotalAvailableBooks(int availableBooks) {
-        this.totalAvailableBooks = availableBooks;
+        if (availableBooks < 0) {
+            System.out.println("Não é possível existir um número negativo de livros disponíveis.\nSettado para 0!");
+        } else {
+            this.totalAvailableBooks = availableBooks;
+        }
+    }
+
+    public int getTotalPages() {
+        return this.totalPages;
+    }
+
+    public void setTotalPages(int totalPages) {
+        if (totalPages < 0) {
+            System.out.println("Não é possível existir um número negativo de páginas.\nSettado para 0!");
+        } else {
+            this.totalPages = totalPages;
+        }
     }
 }
