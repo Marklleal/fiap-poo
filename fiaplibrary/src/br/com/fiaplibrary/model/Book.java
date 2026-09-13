@@ -21,4 +21,28 @@ public class Book {
 
         totalAvailableBooks -= numBooks;
     }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getTotalBooks() {
+        return this.totalBooks;
+    }
+
+    public void setTotalBooks(int total) {
+        this.totalBooks = total;
+    }
+
+    public int getTotalAvailableBooks() {
+        return this.totalAvailableBooks;
+    }
+
+    public void setTotalAvailableBooks(int availableBooks) {
+        this.totalAvailableBooks = availableBooks;
+    }
 }
