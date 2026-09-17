@@ -9,9 +9,9 @@ public class Passageiro {
 
     // Construtor: roteia tudo pelos setters (ponto único de validação)
     public Passageiro(String nome, String cpf) {
-        setNome(nome);
-        setCpf(cpf);
-        setSaldo(0);   // todo mundo começa zerado — passando pela guarda
+        this.setNome(nome);
+        this.setCpf(cpf);
+        this.setSaldo(0);   // todo mundo começa zerado — passando pela guarda
     }
 
     // Getters públicos: leitura liberada
