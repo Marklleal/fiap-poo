@@ -1,6 +1,6 @@
 package br.com.fiapride.main;
 
-import br.com.fiapride.model.Passageiro;
+import br.com.fiapride.model.*;
 
 public class SistemaPrincipal {
 
@@ -9,6 +9,7 @@ public class SistemaPrincipal {
         System.out.println("--- Iniciando o Sistema FiapRide ---\n");
 
         Passageiro passageiro1 = new Passageiro("Ana Silva", "222.222.222-22");
+        Veiculo carro = new Veiculo("ABC-1234", "Toyota Corolla", "Carro", 3);
         System.out.println(">>> Recarga Passageiro 1:");
         passageiro1.adicionarSaldo(50.0);
 
