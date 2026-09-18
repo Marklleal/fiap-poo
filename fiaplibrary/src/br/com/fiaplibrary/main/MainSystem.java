@@ -12,11 +12,11 @@ public class MainSystem {
         introductionToPython.bookRental(3);
         introductionToOOP.bookRental(3);
 
-        System.out.println("--- Fiap Library System ---");
-        System.out.println("Book name: " + introductionToPython.name +
-            "\nAvaible books: " + introductionToPython.totalAvailableBooks);
+        System.out.println("--- Iniciando o Sistema FiapLibrary ---\n");
+        System.out.println("Book name: " + introductionToPython.getName() +
+            "\nAvaible books: " + introductionToPython.getTotalAvailableBooks());
 
-        System.out.println("Book name: " + introductionToOOP.name +
-            "\nAvaible books: " + introductionToOOP.totalAvailableBooks);
+        System.out.println("Book name: " + introductionToOOP.getName() +
+            "\nAvaible books: " + introductionToOOP.getTotalAvailableBooks());
     }
 }

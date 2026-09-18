@@ -6,18 +6,18 @@ public class Book {
     private int totalAvailableBooks;
     private int totalPages;
 
-    // Constructor declaration - It's not the same that method
+    // Declaração do Método Construtor
     public Book(String name, int totalBooks, int totalPages) {
-        setName(name);
-        setTotalBooks(totalBooks);
-        setTotalAvailableBooks(totalBooks);
-        setTotalPages(totalPages);
+        this.setName(name);
+        this.setTotalBooks(totalBooks);
+        this.setTotalAvailableBooks(totalBooks);
+        this.setTotalPages(totalPages);
     }
 
     public void bookRental(int numBooks) {
         if (numBooks > totalAvailableBooks) {
             System.out.println("Out of stock!");
-            return; // It's our "exit" at this moment
+            return; // ´return´ é usado como saída no momento...
         }
 
         totalAvailableBooks -= numBooks;
@@ -36,7 +36,12 @@ public class Book {
     }
 
     public void setTotalBooks(int totalBooks) {
-        this.totalBooks = totalBooks;
+        if (totalBooks < 0) {
+            System.out.println("Não é possível haver um número negativo de livros disponíveis.\nSettado para 0!");
+            this.totalBooks = 0;
+        } else {
+            this.totalBooks = totalBooks;
+        }
     }
 
     public int getTotalAvailableBooks() {
