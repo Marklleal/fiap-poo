@@ -3,3 +3,6 @@
 bin/
 out/
 target/
+.ai-jail
+opencode.json
+CONTRIBUTING.md
