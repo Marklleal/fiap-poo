@@ -6,3 +6,4 @@ target/
 .ai-jail
 opencode.json
 CONTRIBUTING.md
+.gitmessage
